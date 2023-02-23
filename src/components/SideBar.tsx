@@ -17,7 +17,12 @@ import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
 import MailIcon from '@mui/icons-material/Mail'
 import { useNavigate } from 'react-router-dom'
-
+import DashboardIcon from '@mui/icons-material/Dashboard'
+import CampaignIcon from '@mui/icons-material/Campaign'
+import LocalOfferIcon from '@mui/icons-material/LocalOffer'
+import EmojiEventsIcon from '@mui/icons-material/EmojiEvents'
+import HelpCenterIcon from '@mui/icons-material/HelpCenter'
+import SettingsIcon from '@mui/icons-material/Settings'
 const drawerWidth = 240
 
 const openedMixin = (theme: Theme): CSSObject => ({
@@ -112,7 +117,7 @@ export default function SideBar() {
                   justifyContent: 'center',
                 }}
               >
-                <MailIcon />
+                <DashboardIcon />
               </ListItemIcon>
               <ListItemText
                 primary="Dashboard"
@@ -142,7 +147,7 @@ export default function SideBar() {
                   justifyContent: 'center',
                 }}
               >
-                <MailIcon />
+                <CampaignIcon />
               </ListItemIcon>
               <ListItemText
                 primary="Campaigns"
@@ -172,7 +177,7 @@ export default function SideBar() {
                   justifyContent: 'center',
                 }}
               >
-                <MailIcon />
+                <LocalOfferIcon />
               </ListItemIcon>
               <ListItemText primary="Offers" sx={{ opacity: open ? 1 : 0 }} />
             </ListItemButton>
@@ -199,7 +204,7 @@ export default function SideBar() {
                   justifyContent: 'center',
                 }}
               >
-                <MailIcon />
+                <EmojiEventsIcon />
               </ListItemIcon>
               <ListItemText primary="Rewards" sx={{ opacity: open ? 1 : 0 }} />
             </ListItemButton>
@@ -226,7 +231,7 @@ export default function SideBar() {
                   justifyContent: 'center',
                 }}
               >
-                <MailIcon />
+                <HelpCenterIcon />
               </ListItemIcon>
               <ListItemText
                 primary="Help Center"
@@ -256,7 +261,7 @@ export default function SideBar() {
                   justifyContent: 'center',
                 }}
               >
-                <MailIcon />
+                <SettingsIcon />
               </ListItemIcon>
               <ListItemText primary="Settings" sx={{ opacity: open ? 1 : 0 }} />
             </ListItemButton>

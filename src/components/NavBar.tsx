@@ -184,7 +184,7 @@ export default function NavBar() {
             component="div"
             sx={{ display: { xs: 'none', sm: 'block' } }}
           >
-            MUI
+            MICS2.0
           </Typography>
           <Search>
             <SearchIconWrapper>
