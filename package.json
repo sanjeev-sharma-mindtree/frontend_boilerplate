@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint --fix \"./src/**/*.{js,jsx,ts,tsx,json}\"",
     "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
-    "start": "webpack serve --config webpack/webpack.config.js --env env=dev --open",
+    "start": "webpack serve --config webpack/webpack.config.js --env env=dev --open --hot",
     "build": "webpack --config webpack/webpack.config.js --env env=prod"
   },
   "author": "",
@@ -18,9 +18,13 @@
     "@mui/icons-material": "^5.11.9",
     "@mui/material": "^5.11.10",
     "@mui/styled-engine-sc": "^5.11.9",
+    "@mui/x-data-grid": "^5.17.24",
+    "formik": "^2.2.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "styled-components": "^5.3.6"
+    "react-router-dom": "^6.8.1",
+    "styled-components": "^5.3.6",
+    "yup": "^1.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
