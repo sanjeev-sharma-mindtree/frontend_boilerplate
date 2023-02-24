@@ -130,7 +130,7 @@ export default function SideBar() {
             disablePadding
             sx={{ display: 'block' }}
             onClick={() => {
-              navigate('/Campaigns')
+              navigate('/campaigns')
             }}
           >
             <ListItemButton
@@ -160,7 +160,7 @@ export default function SideBar() {
             disablePadding
             sx={{ display: 'block' }}
             onClick={() => {
-              navigate('/Offers')
+              navigate('/offers')
             }}
           >
             <ListItemButton
@@ -187,7 +187,7 @@ export default function SideBar() {
             disablePadding
             sx={{ display: 'block' }}
             onClick={() => {
-              navigate('/Rewards')
+              navigate('/rewards')
             }}
           >
             <ListItemButton
@@ -214,7 +214,7 @@ export default function SideBar() {
             disablePadding
             sx={{ display: 'block' }}
             onClick={() => {
-              navigate('/HelpCenter')
+              navigate('/help-center')
             }}
           >
             <ListItemButton
@@ -244,7 +244,7 @@ export default function SideBar() {
             disablePadding
             sx={{ display: 'block' }}
             onClick={() => {
-              navigate('/Settings')
+              navigate('/settings')
             }}
           >
             <ListItemButton
