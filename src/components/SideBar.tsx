@@ -106,14 +106,14 @@ export default function SideBar({showSideBar}: SideBarProps) {
             <ListItemButton
               sx={{
                 minHeight: 48,
-                justifyContent: open ? 'initial' : 'center',
+                justifyContent: showSideBar ? 'initial' : 'center',
                 px: 2.5,
               }}
             >
               <ListItemIcon
                 sx={{
                   minWidth: 0,
-                  mr: open ? 3 : 'auto',
+                  mr: showSideBar ? 3 : 'auto',
                   justifyContent: 'center',
                 }}
               >
@@ -121,7 +121,7 @@ export default function SideBar({showSideBar}: SideBarProps) {
               </ListItemIcon>
               <ListItemText
                 primary="Dashboard"
-                sx={{ opacity: open ? 1 : 0 }}
+                sx={{ opacity: showSideBar ? 1 : 0 }}
               />
             </ListItemButton>
           </ListItem>
@@ -136,14 +136,14 @@ export default function SideBar({showSideBar}: SideBarProps) {
             <ListItemButton
               sx={{
                 minHeight: 48,
-                justifyContent: open ? 'initial' : 'center',
+                justifyContent: showSideBar ? 'initial' : 'center',
                 px: 2.5,
               }}
             >
               <ListItemIcon
                 sx={{
                   minWidth: 0,
-                  mr: open ? 3 : 'auto',
+                  mr: showSideBar ? 3 : 'auto',
                   justifyContent: 'center',
                 }}
               >
@@ -151,7 +151,7 @@ export default function SideBar({showSideBar}: SideBarProps) {
               </ListItemIcon>
               <ListItemText
                 primary="Campaigns"
-                sx={{ opacity: open ? 1 : 0 }}
+                sx={{ opacity: showSideBar ? 1 : 0 }}
               />
             </ListItemButton>
           </ListItem>
@@ -166,20 +166,20 @@ export default function SideBar({showSideBar}: SideBarProps) {
             <ListItemButton
               sx={{
                 minHeight: 48,
-                justifyContent: open ? 'initial' : 'center',
+                justifyContent: showSideBar ? 'initial' : 'center',
                 px: 2.5,
               }}
             >
               <ListItemIcon
                 sx={{
                   minWidth: 0,
-                  mr: open ? 3 : 'auto',
+                  mr: showSideBar ? 3 : 'auto',
                   justifyContent: 'center',
                 }}
               >
                 <LocalOfferIcon />
               </ListItemIcon>
-              <ListItemText primary="Offers" sx={{ opacity: open ? 1 : 0 }} />
+              <ListItemText primary="Offers" sx={{ opacity: showSideBar ? 1 : 0 }} />
             </ListItemButton>
           </ListItem>
           <ListItem
@@ -193,20 +193,20 @@ export default function SideBar({showSideBar}: SideBarProps) {
             <ListItemButton
               sx={{
                 minHeight: 48,
-                justifyContent: open ? 'initial' : 'center',
+                justifyContent: showSideBar ? 'initial' : 'center',
                 px: 2.5,
               }}
             >
               <ListItemIcon
                 sx={{
                   minWidth: 0,
-                  mr: open ? 3 : 'auto',
+                  mr: showSideBar ? 3 : 'auto',
                   justifyContent: 'center',
                 }}
               >
                 <EmojiEventsIcon />
               </ListItemIcon>
-              <ListItemText primary="Rewards" sx={{ opacity: open ? 1 : 0 }} />
+              <ListItemText primary="Rewards" sx={{ opacity: showSideBar ? 1 : 0 }} />
             </ListItemButton>
           </ListItem>
           <ListItem
@@ -220,14 +220,14 @@ export default function SideBar({showSideBar}: SideBarProps) {
             <ListItemButton
               sx={{
                 minHeight: 48,
-                justifyContent: open ? 'initial' : 'center',
+                justifyContent: showSideBar ? 'initial' : 'center',
                 px: 2.5,
               }}
             >
               <ListItemIcon
                 sx={{
                   minWidth: 0,
-                  mr: open ? 3 : 'auto',
+                  mr: showSideBar ? 3 : 'auto',
                   justifyContent: 'center',
                 }}
               >
@@ -235,7 +235,7 @@ export default function SideBar({showSideBar}: SideBarProps) {
               </ListItemIcon>
               <ListItemText
                 primary="Help Center"
-                sx={{ opacity: open ? 1 : 0 }}
+                sx={{ opacity: showSideBar ? 1 : 0 }}
               />
             </ListItemButton>
           </ListItem>
@@ -250,20 +250,20 @@ export default function SideBar({showSideBar}: SideBarProps) {
             <ListItemButton
               sx={{
                 minHeight: 48,
-                justifyContent: open ? 'initial' : 'center',
+                justifyContent: showSideBar ? 'initial' : 'center',
                 px: 2.5,
               }}
             >
               <ListItemIcon
                 sx={{
                   minWidth: 0,
-                  mr: open ? 3 : 'auto',
+                  mr: showSideBar ? 3 : 'auto',
                   justifyContent: 'center',
                 }}
               >
                 <SettingsIcon />
               </ListItemIcon>
-              <ListItemText primary="Settings" sx={{ opacity: open ? 1 : 0 }} />
+              <ListItemText primary="Settings" sx={{ opacity: showSideBar ? 1 : 0 }} />
             </ListItemButton>
           </ListItem>
         </List>

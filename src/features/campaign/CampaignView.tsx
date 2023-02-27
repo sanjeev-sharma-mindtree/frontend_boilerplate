@@ -3,14 +3,8 @@ import {Link} from 'react-router-dom';
 import { Box } from '@mui/system'
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { fetchCampaigns } from './campaignSlice';
-import SideBar from '../../components/SideBar'
 
-
-type CampaignProps = {
-    showSideBar: boolean
-}
-
-export default function CampaignView({showSideBar}: CampaignProps) {
+export default function CampaignView() {
     //get campaign data from store using useAppSelector
     const campaign = useAppSelector(state => state.campaign)
     const {campaignsList} = campaign;
@@ -22,31 +16,27 @@ export default function CampaignView({showSideBar}: CampaignProps) {
     }, [])
 
     return (
-        <Box sx={{ display: 'flex' }}>
-            <SideBar showSideBar={showSideBar} />
-
-            <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-                <h2>List of Campaigns</h2>
-                {
-                    campaignsList.loading && <div>Loading....</div>
-                }
-                {
-                    (!campaignsList.loading && campaignsList.error) && <div>{campaignsList.error}</div>
-                }
-                {
-                    (!campaignsList.loading && campaignsList.data.length) && <ul>
-                        {
-                            campaignsList.data.map(camp => {
-                                return (
-                                    <Link key={camp.id} to={`/campaign/${camp.id}`}>
-                                        <li>{camp.name}</li>
-                                    </Link>
-                                )
-                            })
-                        }   
-                    </ul>
-                }
-            </Box>
+        <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+            <h2>List of Campaigns</h2>
+            {
+                campaignsList.loading && <div>Loading....</div>
+            }
+            {
+                (!campaignsList.loading && campaignsList.error) && <div>{campaignsList.error}</div>
+            }
+            {
+                (!campaignsList.loading && campaignsList.data.length) && <ul>
+                    {
+                        campaignsList.data.map(camp => {
+                            return (
+                                <Link key={camp.id} to={`/campaign/${camp.id}`}>
+                                    <li>{camp.name}</li>
+                                </Link>
+                            )
+                        })
+                    }   
+                </ul>
+            }
         </Box>
     )
 }
