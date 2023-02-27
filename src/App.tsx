@@ -1,4 +1,5 @@
 import './style.css'
+import {useState} from 'react'
 import { Route, Routes, BrowserRouter } from 'react-router-dom'
 import Dashboard from './features/home/Dashboard'
 import Offers from './features/offers/Offers'
@@ -10,13 +11,15 @@ import NavBar from './components/NavBar'
 import CampaignView from './features/campaign/CampaignView'
 
 function App() {
+  const [showSideBar, setShowSideBar] = useState<boolean>(true);
+
   return (
     <>
-      <NavBar />
+      <NavBar setShowSideBar={setShowSideBar} showSideBar={showSideBar} />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Dashboard />}></Route>
-          <Route path="/campaigns" element={<CampaignView />}></Route>
+          <Route path="/" element={<Dashboard showSideBar={showSideBar} />}></Route>
+          <Route path="/campaigns" element={<CampaignView showSideBar={showSideBar} />}></Route>
           <Route path="/offers" element={<Offers />}></Route>
           <Route path="/rewards" element={<Rewards />}></Route>
           <Route path="/customers" element={<Customers />}></Route>

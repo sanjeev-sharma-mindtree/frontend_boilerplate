@@ -1,4 +1,4 @@
-import * as React from 'react'
+import {useState} from 'react'
 import { styled, alpha } from '@mui/material/styles'
 import MuiAppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box'
@@ -66,10 +66,14 @@ const AppBar = styled(MuiAppBar, {
   }),
 }))
 
-export default function NavBar() {
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
-  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
-    React.useState<null | HTMLElement>(null)
+type NavBarProps = {
+  setShowSideBar: (event: boolean) => void
+  showSideBar: boolean
+}
+
+export default function NavBar({setShowSideBar, showSideBar}: NavBarProps) {  
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
+  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState<null | HTMLElement>(null)
 
   const isMenuOpen = Boolean(anchorEl)
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl)
@@ -175,6 +179,7 @@ export default function NavBar() {
             color="inherit"
             aria-label="open drawer"
             sx={{ mr: 2 }}
+            onClick={() => setShowSideBar(!showSideBar)}
           >
             <MenuIcon />
           </IconButton>

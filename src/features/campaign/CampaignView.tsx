@@ -5,7 +5,12 @@ import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { fetchCampaigns } from './campaignSlice';
 import SideBar from '../../components/SideBar'
 
-export default function CampaignView() {
+
+type CampaignProps = {
+    showSideBar: boolean
+}
+
+export default function CampaignView({showSideBar}: CampaignProps) {
     //get campaign data from store using useAppSelector
     const campaign = useAppSelector(state => state.campaign)
     const {campaignsList} = campaign;
@@ -18,7 +23,7 @@ export default function CampaignView() {
 
     return (
         <Box sx={{ display: 'flex' }}>
-            <SideBar />
+            <SideBar showSideBar={showSideBar} />
 
             <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
                 <h2>List of Campaigns</h2>

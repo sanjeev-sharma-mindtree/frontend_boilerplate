@@ -72,20 +72,20 @@ const Drawer = styled(MuiDrawer, {
   }),
 }))
 
-export default function SideBar() {
+type SideBarProps = {
+  showSideBar: boolean
+}
+
+export default function SideBar({showSideBar}: SideBarProps) {
   const theme = useTheme()
-  const [open, setOpen] = React.useState(true)
   const navigate = useNavigate()
-  const handleDrawerClose = () => {
-    setOpen(!open)
-  }
 
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <Drawer variant="permanent" open={open}>
+      <Drawer variant="permanent" open={showSideBar}>
         <DrawerHeader>
-          <IconButton onClick={handleDrawerClose}>
+          <IconButton>
             {theme.direction === 'rtl' ? (
               <ChevronRightIcon />
             ) : (

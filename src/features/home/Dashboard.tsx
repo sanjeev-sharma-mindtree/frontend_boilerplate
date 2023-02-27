@@ -66,7 +66,11 @@ const data = [
   },
 ]
 
-const Dashboard = () => {
+type DashboardProps = {
+  showSideBar: boolean
+}
+
+const Dashboard = ({showSideBar}: DashboardProps) => {
   const CampaignCard = styled(Card)({
     background: `linear-gradient(0deg, rgba(34,193,195,0.6) 0%, rgba(253,187,45,0.14066876750700286) 100%)`,
   })
@@ -74,7 +78,7 @@ const Dashboard = () => {
     <>
       <Box height={70} />
       <Box sx={{ display: 'flex' }}>
-        <SideBar />
+        <SideBar showSideBar={showSideBar} />
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
           <Grid container spacing={2}>
             <Grid item xs={12}>
