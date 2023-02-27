@@ -9,7 +9,7 @@ import Rewards from './features/rewards/Rewards'
 import Customers from './features/customers/Customers'
 import HelpCenter from './features/help/HelpCenter'
 import Settings from './features/settings/Settings'
-import NavBar from './components/NavBar'
+import Header from './components/Header'
 import CampaignView from './features/campaign/CampaignView'
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
 
   return (
     <>
-      <NavBar setShowSideBar={setShowSideBar} showSideBar={showSideBar} />
+      <Header setShowSideBar={setShowSideBar} showSideBar={showSideBar} />
       <BrowserRouter>
       <Box height={70} />
       <Box sx={{ display: 'flex' }}>
