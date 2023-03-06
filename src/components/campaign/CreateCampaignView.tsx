@@ -23,7 +23,7 @@ import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDown
 import KeyboardArrowUpOutlinedIcon from '@mui/icons-material/KeyboardArrowUpOutlined';
 import { useNavigate } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
-import { fetchCampaigns } from './campaignSlice';
+import { fetchCampaigns } from '../../features/campaign/campaignSlice';
 
 const steps = [
     {
@@ -167,8 +167,6 @@ export default function CreateCampaignView() {
     return (
         // <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <Grid container sx={{ flexGrow: 1, p: 3 }} spacing={2}>
-            <Grid item xs={12}>
-            </Grid>
             <Grid item xs={8}>
                 <Box sx={{display: 'flex', justifyContent: 'space-between'}}>
                     <Typography>Campaign Details</Typography>
@@ -177,7 +175,9 @@ export default function CreateCampaignView() {
                         <Button variant="contained">Next Step</Button>
                     </Stack>
                 </Box>
-                <Paper>
+            </Grid>
+            <Grid item xs={8}>
+                <Paper sx={{p:2, height: "100%"}}>
                     <Box
                         component="form"
                         noValidate
@@ -216,12 +216,12 @@ export default function CreateCampaignView() {
                             </CustomInputLabel>
                             <CustomInput multiline rows={2} fullWidth placeholder='Enter additional information' id="additionalInfo" />
                         </FormControl>
-                        <Button variant="contained">Add Product</Button>
+                        <Button variant="contained" size="small" sx={{width: '40%'}}>Add Product</Button>
                     </Box>
                 </Paper>
             </Grid>
             <Grid item xs={4}>
-                <Paper sx={{p: 2}}>
+                <Paper sx={{p: 2, height: "100%"}}>
                     <Typography variant='h6'>
                         Campaign Name
                     </Typography>
