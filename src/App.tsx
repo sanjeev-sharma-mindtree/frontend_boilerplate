@@ -11,6 +11,7 @@ import HelpCenter from './features/help/HelpCenter'
 import Settings from './features/settings/Settings'
 import Header from './components/Header'
 import CampaignView from './features/campaign/CampaignView'
+import CreateCampaignView from './features/campaign/CreateCampaignView'
 
 function App() {
   const [showSideBar, setShowSideBar] = useState<boolean>(true);
@@ -21,16 +22,20 @@ function App() {
       <BrowserRouter>
       <Box height={70} />
       <Box sx={{ display: 'flex' }}>
-        <SideBar showSideBar={showSideBar} />
-          <Routes>
-            <Route path="/" element={<Dashboard />}></Route>
-            <Route path="/campaigns" element={<CampaignView />}></Route>
-            <Route path="/offers" element={<Offers />}></Route>
-            <Route path="/rewards" element={<Rewards />}></Route>
-            <Route path="/customers" element={<Customers />}></Route>
-            <Route path="/help-center" element={<HelpCenter />}></Route>
-            <Route path="/settings" element={<Settings />}></Route>
-          </Routes>
+        {
+          (window.location.pathname !== '/create-campaign') &&
+          <SideBar showSideBar={showSideBar} />
+        }
+        <Routes>
+          <Route path="/" element={<Dashboard />}></Route>
+          <Route path="/campaigns" element={<CampaignView />}></Route>
+          <Route path="/create-campaign" element={<CreateCampaignView />}></Route>
+          <Route path="/offers" element={<Offers />}></Route>
+          <Route path="/rewards" element={<Rewards />}></Route>
+          <Route path="/customers" element={<Customers />}></Route>
+          <Route path="/help-center" element={<HelpCenter />}></Route>
+          <Route path="/settings" element={<Settings />}></Route>
+        </Routes>
       </Box>
       </BrowserRouter>
     </>
