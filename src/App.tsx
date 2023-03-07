@@ -1,9 +1,9 @@
 import './style.css'
-import {useState} from 'react'
+import { useState } from 'react'
 import { Route, Routes, BrowserRouter } from 'react-router-dom'
 import { Box } from '@mui/system'
 import SideBar from './components/common/SideBar'
-import Dashboard from './features/home/Dashboard'
+import Dashboard from './components/home/Dashboard'
 import Offers from './features/offers/Offers'
 import Rewards from './features/rewards/Rewards'
 import Customers from './features/customers/Customers'
@@ -14,7 +14,7 @@ import Campaign from './pages/Campaign'
 import CreateCampaign from './pages/CreateCampaign'
 
 function App() {
-  const [showSideBar, setShowSideBar] = useState<boolean>(true);
+  const [showSideBar, setShowSideBar] = useState<boolean>(true)
 
   return (
     <>
@@ -22,10 +22,9 @@ function App() {
       <BrowserRouter>
         <Box height={70} />
         <Box sx={{ display: 'flex' }}>
-          {
-            (window.location.pathname !== '/create-campaign') &&
+          {window.location.pathname !== '/create-campaign' && (
             <SideBar showSideBar={showSideBar} />
-          }
+          )}
           <Routes>
             <Route path="/" element={<Dashboard />}></Route>
             <Route path="/campaigns" element={<Campaign />}></Route>

@@ -2,7 +2,7 @@ import { Box } from '@mui/system'
 
 const CampaignSummaryView = () => {
   return (
-    <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+    <Box>
       <h1>Campaign Summary View</h1>
     </Box>
   )
