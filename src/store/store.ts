@@ -1,14 +1,14 @@
-import {configureStore} from '@reduxjs/toolkit';
-import {createLogger} from 'redux-logger';
+import { configureStore } from '@reduxjs/toolkit'
+import { createLogger } from 'redux-logger'
 import campaignReducer from '../features/campaign/campaignSlice'
 
-const logger = createLogger();
+const logger = createLogger()
 
 const store = configureStore({
-    reducer: {
-        campaign: campaignReducer
-    },
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger)
+  reducer: {
+    campaign: campaignReducer,
+  },
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
 })
 
 export default store

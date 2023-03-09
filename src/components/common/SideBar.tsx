@@ -12,7 +12,7 @@ import ListItemButton from '@mui/material/ListItemButton'
 import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
 import { useNavigate } from 'react-router-dom'
-import {NAVIGATION_ITEMS, DRAWER_WIDTH} from '../../utils/constants';
+import { NAVIGATION_ITEMS, DRAWER_WIDTH } from '../../utils/constants'
 
 const openedMixin = (theme: Theme): CSSObject => ({
   width: DRAWER_WIDTH,
@@ -65,7 +65,7 @@ type SideBarProps = {
   showSideBar: boolean
 }
 
-export default function SideBar({showSideBar}: SideBarProps) {
+export default function SideBar({ showSideBar }: SideBarProps) {
   const theme = useTheme()
   const navigate = useNavigate()
 
@@ -84,42 +84,40 @@ export default function SideBar({showSideBar}: SideBarProps) {
         </DrawerHeader>
         <Divider />
         <List>
-          {
-            NAVIGATION_ITEMS.map(navItem => {
-              return (
-                <ListItem
-                  key={navItem.label}
-                  disablePadding
-                  sx={{ display: 'block' }}
-                  onClick={() => {
-                    navigate(`${navItem.link}`)
+          {NAVIGATION_ITEMS.map((navItem) => {
+            return (
+              <ListItem
+                key={navItem.label}
+                disablePadding
+                sx={{ display: 'block' }}
+                onClick={() => {
+                  navigate(`${navItem.link}`)
+                }}
+              >
+                <ListItemButton
+                  sx={{
+                    minHeight: 48,
+                    justifyContent: showSideBar ? 'initial' : 'center',
+                    px: 2.5,
                   }}
                 >
-                  <ListItemButton
+                  <ListItemIcon
                     sx={{
-                      minHeight: 48,
-                      justifyContent: showSideBar ? 'initial' : 'center',
-                      px: 2.5,
+                      minWidth: 0,
+                      mr: showSideBar ? 3 : 'auto',
+                      justifyContent: 'center',
                     }}
                   >
-                    <ListItemIcon
-                      sx={{
-                        minWidth: 0,
-                        mr: showSideBar ? 3 : 'auto',
-                        justifyContent: 'center',
-                      }}
-                    >
-                      {navItem.icon}
-                    </ListItemIcon>
-                    <ListItemText
-                      primary={navItem.label}
-                      sx={{ opacity: showSideBar ? 1 : 0 }}
-                    />
-                  </ListItemButton>
-                </ListItem>
-              )
-            })
-          }
+                    {navItem.icon}
+                  </ListItemIcon>
+                  <ListItemText
+                    primary={navItem.label}
+                    sx={{ opacity: showSideBar ? 1 : 0 }}
+                  />
+                </ListItemButton>
+              </ListItem>
+            )
+          })}
         </List>
       </Drawer>
     </Box>
