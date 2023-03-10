@@ -1,7 +1,7 @@
-import { createTheme } from '@mui/material/styles';
+import { createTheme } from '@mui/material/styles'
 
 export const theme = createTheme({
-     components: {
+  components: {
     // Name of the component
     MuiCard: {
       styleOverrides: {
@@ -14,21 +14,20 @@ export const theme = createTheme({
       },
     },
   },
-    palette: {
-        primary: {
-            main: '#12409F',
-            contrastText:"#ffffff"
-        },
-        secondary: {
-            main: '#edf2ff',
-        },
-        background:{
-            default:"#F4F7FC"
-
-        },
-        text:{
-            primary:"#1D2129",
-            secondary:"#ffffff"
-        }
+  palette: {
+    primary: {
+      main: '#12409F',
+      contrastText: '#ffffff',
     },
+    secondary: {
+      main: '#edf2ff',
+    },
+    background: {
+      default: '#F4F7FC',
+    },
+    text: {
+      primary: '#1D2129',
+      secondary: '#ffffff',
+    },
+  },
 })

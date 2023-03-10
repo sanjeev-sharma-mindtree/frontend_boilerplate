@@ -11,31 +11,37 @@ export const NAVIGATION_ITEMS = [
     {
         label: 'Dashboard',
         link: '/',
-        icon: <HomeOutlinedIcon />
+        icon: <HomeOutlinedIcon />,
+        activeIcon: <HomeOutlinedIcon color='primary' />
     },
     {
         label: 'Campaigns',
         link: '/campaigns',
-        icon: <FlagOutlinedIcon />
+        icon: <FlagOutlinedIcon />,
+        activeIcon: <FlagOutlinedIcon color='primary' />
     },
     {
         label: 'Incentives',
         link: '/incentives',
-        icon: <CardGiftcardOutlinedIcon />
+        icon: <CardGiftcardOutlinedIcon />,
+        activeIcon: <CardGiftcardOutlinedIcon color='primary' />
     },
     {
         label: 'Offline Incentive Registration',
         link: 'offline-incentive-registration',
-        icon: <SubscriptionsOutlinedIcon />
+        icon: <SubscriptionsOutlinedIcon />,
+        activeIcon: <SubscriptionsOutlinedIcon color='primary' />
     },
     {
         label: 'Consumer Support',
         link: 'consumer-support',
-        icon: <SupportAgentOutlinedIcon />
+        icon: <SupportAgentOutlinedIcon />,
+        activeIcon: <SupportAgentOutlinedIcon color='primary' />
     },
     {
         label: 'Preview Receipts',
         link: 'preview-receipts',
-        icon: <ReceiptLongOutlinedIcon />
+        icon: <ReceiptLongOutlinedIcon />,
+        activeIcon: <ReceiptLongOutlinedIcon color='primary' />
     },
 ]
