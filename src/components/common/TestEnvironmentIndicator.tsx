@@ -1,4 +1,4 @@
-import { styled, alpha } from '@mui/material/styles'
+import { styled } from '@mui/material/styles'
 export default function TestEnvironmentIndicator() {
   const TestEnvironmentIndicator = styled('div')(({ theme }) => ({
     position: 'absolute',
@@ -30,8 +30,6 @@ export default function TestEnvironmentIndicator() {
             left: '213px',
             width: '940px',
             height: '30px',
-            font: 'normal normal normal 14px/16px Helvetica Neue',
-            color: '#FFFFFF',
           }}
         >
           Disclaimer! - Please note that you are using MICS application{' '}

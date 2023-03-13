@@ -1,11 +1,10 @@
 import { useState } from 'react'
-import { styled, alpha } from '@mui/material/styles'
+import { styled } from '@mui/material/styles'
 import MuiAppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box'
 import Toolbar from '@mui/material/Toolbar'
 import IconButton from '@mui/material/IconButton'
 import Typography from '@mui/material/Typography'
-import InputBase from '@mui/material/InputBase'
 import Badge from '@mui/material/Badge'
 import MenuItem from '@mui/material/MenuItem'
 import Menu from '@mui/material/Menu'
@@ -15,20 +14,6 @@ import MoreIcon from '@mui/icons-material/MoreVert'
 import Button from '@mui/material/Button'
 import TestEnvironmentIndicator from './TestEnvironmentIndicator'
 import pglogo from '../../assets/img/logo.png'
-
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: 'inherit',
-  '& .MuiInputBase-input': {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create('width'),
-    width: '80%',
-    [theme.breakpoints.up('md')]: {
-      width: '20ch',
-    },
-  },
-}))
 
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== 'open',
@@ -41,24 +26,19 @@ const AppBar = styled(MuiAppBar, {
   }),
 }))
 
-type NavBarProps = {
-  setShowSideBar: (event: boolean) => void
-  showSideBar: boolean
-}
-
-export default function Header({ setShowSideBar, showSideBar }: NavBarProps) {
+export default function Header() {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
     useState<null | HTMLElement>(null)
   const open = Boolean(anchorEl)
-  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget)
-  }
+  // const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+  //   setAnchorEl(event.currentTarget)
+  // }
   const handleClose = () => {
     setAnchorEl(null)
   }
 
-  const isMenuOpen = Boolean(anchorEl)
+  // const isMenuOpen = Boolean(anchorEl)
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl)
 
   const handleProfileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
@@ -160,7 +140,6 @@ export default function Header({ setShowSideBar, showSideBar }: NavBarProps) {
         >
           <span style={{ textTransform: 'capitalize' }}>L</span>ogout
         </Button>{' '}
-        ,
       </MenuItem>
     </Menu>
   )
@@ -195,15 +174,18 @@ export default function Header({ setShowSideBar, showSideBar }: NavBarProps) {
         <p>Notifications</p>
       </MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
-        <IconButton
-          size="large"
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
+        <div
+          style={{
+            backgroundColor: 'rgba(255, 255, 255, 0.2)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '50px',
+            height: '50px',
+          }}
         >
-          <Person2Icon />
-        </IconButton>
+          <Person2Icon style={{ color: 'white' }} />
+        </div>
         <p>Profile</p>
       </MenuItem>
     </Menu>
@@ -217,6 +199,7 @@ export default function Header({ setShowSideBar, showSideBar }: NavBarProps) {
             <img
               src={pglogo}
               placeholder="pglogo"
+              alt="pglogo"
               style={{ width: '40px', height: '40px' }}
             />
           </a>
@@ -238,9 +221,21 @@ export default function Header({ setShowSideBar, showSideBar }: NavBarProps) {
               aria-label="show new notifications"
               color="inherit"
             >
-              <Badge badgeContent={''} variant="dot" color="error">
-                <NotificationsOutlinedIcon />
-              </Badge>
+              <div
+                style={{
+                  backgroundColor: 'rgba(255, 255, 255, 0.2)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '40px',
+                  height: '40px',
+                  borderRadius: '7px',
+                }}
+              >
+                <Badge badgeContent={''} variant="dot" color="error">
+                  <NotificationsOutlinedIcon style={{ color: 'white' }} />
+                </Badge>
+              </div>
             </IconButton>
             <IconButton
               size="large"
@@ -251,7 +246,19 @@ export default function Header({ setShowSideBar, showSideBar }: NavBarProps) {
               onClick={handleProfileMenuOpen}
               color="inherit"
             >
-              <Person2Icon style={{ backgroundColor: 'disabled' }} />
+              <div
+                style={{
+                  backgroundColor: 'rgba(255, 255, 255, 0.2)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '40px',
+                  height: '40px',
+                  borderRadius: '7px',
+                }}
+              >
+                <Person2Icon style={{ color: 'white' }} />
+              </div>
             </IconButton>
           </Box>
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>

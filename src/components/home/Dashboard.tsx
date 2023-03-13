@@ -1,12 +1,4 @@
-import {
-  Button,
-  Card,
-  CardActions,
-  CardContent,
-  CardMedia,
-  Stack,
-  Typography,
-} from '@mui/material'
+import { Card, CardContent, Stack, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import Grid from '@mui/material/Grid'
 import styled from '@emotion/styled'
@@ -83,11 +75,18 @@ const Dashboard = () => {
                     <Typography variant="h6" color="text.secondary">
                       Campaign
                     </Typography>
-                    <Typography>
-                      <span>154</span>
-                      <span>
-                        <a href="#">15</a> active Campaign
-                      </span>
+                  </Stack>
+                </Stack>
+              </CardContent>
+            </CampaignCard>
+            <CampaignCard sx={{ width: `50%`, height: `140` }}>
+              <CardContent>
+                <Stack spacing={2} direction="row">
+                  <CampaignIcon sx={{ fontSize: 60 }} />
+
+                  <Stack>
+                    <Typography variant="h6" color="text.secondary">
+                      Campaign
                     </Typography>
                   </Stack>
                 </Stack>
@@ -104,30 +103,6 @@ const Dashboard = () => {
                     </Typography>
                     <Typography>
                       <span>154</span>
-
-                      <span>
-                        <a href="#">15</a> active Campaign
-                      </span>
-                    </Typography>
-                  </Stack>
-                </Stack>
-              </CardContent>
-            </CampaignCard>
-            <CampaignCard sx={{ width: `50%`, height: `140` }}>
-              <CardContent>
-                <Stack spacing={2} direction="row">
-                  <CampaignIcon sx={{ fontSize: 60 }} />
-
-                  <Stack>
-                    <Typography variant="h6" color="text.secondary">
-                      Campaign
-                    </Typography>
-                    <Typography>
-                      <span>154</span>
-
-                      <span>
-                        <a href="#">15</a> active Campaign
-                      </span>
                     </Typography>
                   </Stack>
                 </Stack>
